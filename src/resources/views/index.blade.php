@@ -18,7 +18,8 @@
             <div>
                 <label class="content-title"  for="quantity">個数</label>
                 <div>
-                    <select name="quantity" id="quantity">
+                    <select name="quantity" id="quantity" >
+                        <option value="" selected disablde>選択してください</option>
                         @foreach(range(1, 10) as $quantity)
                         <option value = "{{ $quantity }}">{{ $quantity }}個</option>
                         @endforeach
@@ -31,7 +32,7 @@
         </form>
     </div>
     <div class="content">
-        <form class="content-top" action="">
+        <form class="content-top" action="/search" method="get">
             <div>
                 <label class="content-title" for="name">検索</label>
                 <div>
@@ -42,10 +43,11 @@
                 <label class="content-title" for="quantity">個数</label>
                 <div>
                     <select name="quantity" id="quantity">
+                        <option value="" selected disablde>選択してください</option>
                         @foreach(range(1, 10) as $quantity)
-                        <option value = "{{ $quantity }}" {{request('quantity') == $quantity ? 'selected' : '' }}>
-                            {{ $quantity }}個
-                        </option>
+                            <option value = "{{ $quantity }}" {{request('quantity') == $quantity ? 'selected' : '' }}>
+                                {{ $quantity }}個
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -74,7 +76,10 @@
                     <td>{{ $item -> quantity }}個</td>
                     <td class="table-item__submit"><button class="table-item__submit-edit" type="submit">編集</button></td>
                 </form>
-                <form action="">
+                <form action="/destroy" method="POST">
+                    @method('DELETE')
+                    @csrf 
+                    <input type="hidden" name="key" value="{{ $item->id }}" >
                     <td>
                         <button class="table-item__submit-delete" type="submit">削除</button>
                     </td>
