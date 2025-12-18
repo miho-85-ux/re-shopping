@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Shopping;
 
 class ShoppingController extends Controller
 {
     public function index(){
+        $items = Shopping::all();
 
-        return view('index');
+        return view('index', compact('items'));
     }
+
+    public function store(Request $request) {
+        Shopping::create($request->all());
+
+        return back();
+    }
+}
+    public function edit(Request $request) {
+        $item = Shopping::find($request->key);
+
+        return redirect('/edit', compact('item'));
 }

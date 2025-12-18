@@ -14,8 +14,9 @@ use App\Http\Controllers\ShoppingController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/', [ShoppingController::class, 'index']);
+
+Route::post('/store', [ShoppingController::class, 'store']);
+
+Route::patch('/edit', [ShoppingController::class, 'edit']);
