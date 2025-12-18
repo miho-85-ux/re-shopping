@@ -28,7 +28,22 @@ class ShoppingController extends Controller
     public function update(Request $request){
         $item = Shopping::find($request->key);
         $item -> update($request->only(['name','quantity']));
-
+        
         return redirect('/');
+    }
+    
+    public function destroy (Request $request) {
+        $item = Shopping::find($request->key);
+        $item->delete();
+
+        return back();
+    }
+
+    public function search (Request $request) {
+        $query = Shopping::query();
+        if(!empty ($request->name)){
+            
+        }
+        return view('index', compact('items'));
     }
 }

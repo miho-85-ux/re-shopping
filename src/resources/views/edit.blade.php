@@ -5,24 +5,24 @@
 @endsection
 
 @section('content')
-<div>
+<div class="edit-content">
     <form action="/update" method="POST">
         @method('PATCH')
         @csrf
         <input type="hidden" name="key" value="{{ $item->id }}">
-        <table>
+        <table class="edit-table">
             <tr>
                 <th>商品名</th>
-                <th><input type="name" name="name" value="{{ old('name', $item->name) }}"></th>
+                <td><input type="name" name="name" value="{{ old('name', $item->name) }}"></td>
             </tr>
             <tr>
                 <th>個数</th>
-                <th><input type="text" name="quantity" value="{{ old('quantity', $item->quantity) }}"></th>
+                <td><input type="text" name="quantity" value="{{ old('quantity', $item->quantity) }}"></td>
             </tr>
         </table>
-        <div>
-            <button type="submit">登録</button>
-            <a href="/">戻る</a>
+        <div class="submit">
+            <button class="edit-submit"  type="submit">登録</button>
+            <a class="edit-submit__back" href="/">戻る</a>
         </div>
     </form>
     
