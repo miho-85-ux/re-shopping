@@ -18,9 +18,17 @@ class ShoppingController extends Controller
 
         return back();
     }
-}
+
     public function edit(Request $request) {
         $item = Shopping::find($request->key);
+        
+        return view('/edit', compact('item'));
+    }
+    
+    public function update(Request $request){
+        $item = Shopping::find($request->key);
+        $item -> update($request->only(['name','quantity']));
 
-        return redirect('/edit', compact('item'));
+        return redirect('/');
+    }
 }
