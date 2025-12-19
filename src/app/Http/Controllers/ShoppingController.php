@@ -41,9 +41,16 @@ class ShoppingController extends Controller
 
     public function search (Request $request) {
         $query = Shopping::query();
+
         if(!empty ($request->name)){
-            
+            $query->where('name', 'like', '%'. $request->name. '%');            
         }
+        if (!empty ($request->quantity)){
+            $query->where('quantity', $request->quantity);
+        }
+
+        $items = $query->get();
+
         return view('index', compact('items'));
     }
 }
