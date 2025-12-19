@@ -25,4 +25,4 @@ Route::patch('/update', [ShoppingController::class, 'update']);
 
 Route::delete('/destroy', [ShoppingController::class, 'destroy']);
 
-Route::get('/serch', [ShoppingController::class, 'search']);
+Route::get('/search', [ShoppingController::class, 'search']);

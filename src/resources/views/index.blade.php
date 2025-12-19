@@ -32,11 +32,11 @@
         </form>
     </div>
     <div class="content">
-        <form class="content-top" action="/search" method="get">
+        <form class="content-top" action="/search" method="GET">
             <div>
                 <label class="content-title" for="name">検索</label>
                 <div>
-                    <input type="text" id="name">
+                    <input type="text" name="name" id="name" value="{{ request('name') }}">
                 </div>
             </div>
             <div>
