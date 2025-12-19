@@ -1,0 +1,81 @@
+.Shopping-content {
+    width: auto;
+    margin: 0 auto;
+}
+
+.content {
+    margin: 20px;
+    padding: 15px;
+}
+
+.content-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-title {
+    font-size: 20px;
+}
+
+input, select {
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.content-submit {
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 15px 40px;
+    border: none;
+    background-color: #6699FF;
+    color: #fff;
+
+}
+
+.shopping-table{
+    margin: 25px auto;
+    max-width: 1230px;
+    border-collapse: collapse;
+
+}
+
+.table {
+    table-layout: fixed;
+    width: 70;
+    margin-bottom: 50px;
+}
+
+.table-item__title {
+    font-size: 20px;
+}
+
+th,td {
+    padding: 15px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    width: 15%;
+    height: 30%;
+}
+
+.table-item__submit {
+    padding: 0 0 0 200px;
+}
+
+.table-item__submit-edit {
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 30px;
+    background-color: #66CCFF;
+    color: #fff;
+}
+
+.table-item__submit-delete {
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 30px;
+    background-color: #FF6600;
+    color: #fff;
+
+}

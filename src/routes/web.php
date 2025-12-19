@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShoppingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ShoppingController::class, 'index']);
+
+Route::post('/store', [ShoppingController::class, 'store']);
+
+Route::patch('/edit', [ShoppingController::class, 'edit']);
+
+Route::patch('/update', [ShoppingController::class, 'update']);
+
+Route::delete('/destroy', [ShoppingController::class, 'destroy']);
+
+Route::get('/search', [ShoppingController::class, 'search']);
